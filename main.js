@@ -4,6 +4,7 @@ const dd = document.querySelector(".Date");
 const mm = document.querySelector(".Month");
 const yyyy = document.querySelector(".Year");
 const error=document.querySelector(".error");
+const errorClass=document.createElement("div");
 var d, m, y, birthDate, age;
 
 function showError(){
