@@ -3,48 +3,45 @@ const Submit = document.querySelector(".arrow");
 const dd = document.querySelector(".Date");
 const mm = document.querySelector(".Month");
 const yyyy = document.querySelector(".Year");
-const error=document.querySelector(".error");
+const age_data= document.querySelector(".age_data");
+
 const errorClass=document.createElement("div");
 var d, m, y, birthDate, age;
+function checkDate(){
+    var isValid=false;
+    if(dd.value=="")
+    {
 
-function showError(){
-
-
-    if(dd.validity.rangeUnderFlow){
-       error.textContent="must be a valid day ";
-
-    }else if (dd.validity.rangeOverFlow){
-       error.textContent="must be a valid day ";
+        errorClass.textContent="enter a valid date";
+        
+    }else if(dd.value>31||dd.value<1)
+    {
+        errorClass.textContent="must be a valid date";
     }
-    else if(dd.validity.valueMissing){
-        error.textContent="must enter a date";
+    else 
+    {
+        isValid=true;
     }
 
-    error.className="error active";
-}
-dd.addEventListener("input",(event)=>{
-    if(dd.validity.valid){
-        error.textContent="";
-        error.className="error";
+    if(!isValid){
+        errorClass.className="errorClass";
+        age_data.appendChild(errorClass);
+    }
 
-    }else
-    
-    showError();
-    
+};
 
-
-
-});
 
 
 
 
 Submit.addEventListener("click", function (event) {
-    if(!dd.validity.valid)
-    showError();
-
-
     event.preventDefault();
+     checkDate();
+    checkMonth();
+    checkYear();
+    
+
+    
 
 
 
