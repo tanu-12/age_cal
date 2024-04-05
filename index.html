@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card">
+    <form>
+<div class="age_input flex-group">
+<div class="age_data">
+  <label for="Date">Date</label>
+  <input type="number" class="Date" placeholder="DD" required min="1" max="31"> 
+  <div class="error"></div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="age_data">
+  <label for="Month">Month</label>
+  <input type="number" class="Month" placeholder="MM" required min="1" max="12">
+</div>
+<div class="age_data">
+  <label for="Year">Year</label>
+  <input type="number" class="Year" placeholder="YYYY"> 
+</div>
+</div>
+  <div class="arrow">
+  <div class="hline"></div>
+<button class="arrow_button"><img src="assets/images/icon-arrow.svg" alt="icon-arrow">
+</button>
+</div>
+</form>
+<div class="result">
+    <h1><div class="age_year"><span>--</span> years</div></h1>
+    <h1><div class="age_months"><span>--</span> months</div></h1>
+    <h1><div class="age_days"><span>--</span> days</div></h1>
+  </div>
+</div>
+
+<script defer src="main.js"></script>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+   </div> -->
+</body>
+</html>
