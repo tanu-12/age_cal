@@ -12,6 +12,9 @@ function setErrorMessage(input, message) {
     var error = age_data.querySelector(".error");
     error.textContent = message;
 
+
+    age_data.className = "age_date error_class";
+
 }
 
 function checkDate(dd) {
@@ -21,7 +24,7 @@ function checkDate(dd) {
 
     if (dd.value == "") {
 
-        message = "enter a valid date";
+        message = "This field is required";
 
     } else if (dd.value > n || dd.value < 1) {
         message = "must be a valid date";
@@ -38,7 +41,7 @@ function checkMonth(mm) {
 
     if (mm.value == "") {
 
-        message = "enter a valid month";
+        message = "This field is required";
 
     } else if (mm.value > 12 || mm.value < 1) {
         message = "must be a valid month";
@@ -50,15 +53,16 @@ function checkMonth(mm) {
 
 function checkYear(yyyy) {
     var message;
+    var cY = new Date().getFullYear();
 
 
 
     if (yyyy.value == "") {
 
-        message = "enter a valid year";
+        message = "This field is required";
 
-    } else if (yyyy.value > 2025 || mm.value < 1) {
-        message = "must be a valid date";
+    } else if (yyyy.value > cY || mm.value < 1) {
+        message = "must be in the past ";
     }
 
     setErrorMessage(yyyy, message);
@@ -74,6 +78,7 @@ Submit.addEventListener("click", function (event) {
     checkDate(dd);
     checkMonth(mm);
     checkYear(yyyy);
+
 
 
 
