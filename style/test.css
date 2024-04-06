@@ -1,0 +1,9 @@
+.age_date.error_class label {
+  color: red;
+}
+.age_date.error_class input {
+  border: red;
+}
+.age_date.error_class .error {
+  color: red;
+}/*# sourceMappingURL=test.css.map */
