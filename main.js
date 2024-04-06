@@ -3,30 +3,28 @@ const Submit = document.querySelector(".arrow");
 const dd = document.querySelector(".Date");
 const mm = document.querySelector(".Month");
 const yyyy = document.querySelector(".Year");
-const age_data= document.querySelector(".age_data");
+const age_data = document.querySelector(".age_data");
 
-const errorClass=document.createElement("div");
+
 var d, m, y, birthDate, age;
-function checkDate(){
-    var isValid=false;
-    if(dd.value=="")
-    {
+function setErrorMessage(input, message) {
+    var age_data = input.parentNode;
+    var error = age_data.querySelector(".error");
+    error.textContent = message;
 
-        errorClass.textContent="enter a valid date";
-        
-    }else if(dd.value>31||dd.value<1)
-    {
-        errorClass.textContent="must be a valid date";
-    }
-    else 
-    {
-        isValid=true;
+}
+
+function checkDate(dd) {
+    var message;
+    if (dd.value == "") {
+
+        message = "enter a valid date";
+
+    } else if (dd.value > 31 || dd.value < 1) {
+        message = "must be a valid date";
     }
 
-    if(!isValid){
-        errorClass.className="errorClass";
-        age_data.appendChild(errorClass);
-    }
+    setErrorMessage(dd, message);
 
 };
 
@@ -36,16 +34,16 @@ function checkDate(){
 
 Submit.addEventListener("click", function (event) {
     event.preventDefault();
-     checkDate();
+    checkDate(dd);
     checkMonth();
     checkYear();
-    
-
-    
 
 
 
-    
+
+
+
+
 
     d = (dd.value);
     m = (mm.value);
@@ -55,7 +53,7 @@ Submit.addEventListener("click", function (event) {
     birthDate = new Date(Dob);
     // console.log(birthDate);
     age = calculateAge(birthDate);
-    
+
     displayResult();
 
 
@@ -75,7 +73,7 @@ const EPOCH_DAY = EPOCH.getUTCDate();      // EPOCH_DAY = 1
 
 // * @param { Date } birthDate
 
-function calculateAge(birthDate){
+function calculateAge(birthDate) {
     // Calculate the difference between the current date and the birth date
     const diff = new Date(Date.now() - birthDate.getTime());
     // console.log(`${Date.now()} - ${birthDate.getTime()}`);
