@@ -3,7 +3,7 @@ const Submit = document.querySelector(".arrow");
 const dd = document.querySelector(".Date");
 const mm = document.querySelector(".Month");
 const yyyy = document.querySelector(".Year");
-const age_data = document.querySelector(".age_data");
+// const age_data = document.querySelector(".age_data");
 
 
 var d, m, y, birthDate, age;
@@ -16,15 +16,52 @@ function setErrorMessage(input, message) {
 
 function checkDate(dd) {
     var message;
+
+    var n = new Date(yyyy, mm, 0).getDate();
+
     if (dd.value == "") {
 
         message = "enter a valid date";
 
-    } else if (dd.value > 31 || dd.value < 1) {
+    } else if (dd.value > n || dd.value < 1) {
         message = "must be a valid date";
     }
 
     setErrorMessage(dd, message);
+
+};
+
+function checkMonth(mm) {
+    var message;
+
+
+
+    if (mm.value == "") {
+
+        message = "enter a valid month";
+
+    } else if (mm.value > 12 || mm.value < 1) {
+        message = "must be a valid month";
+    }
+
+    setErrorMessage(mm, message);
+
+};
+
+function checkYear(yyyy) {
+    var message;
+
+
+
+    if (yyyy.value == "") {
+
+        message = "enter a valid year";
+
+    } else if (yyyy.value > 2025 || mm.value < 1) {
+        message = "must be a valid date";
+    }
+
+    setErrorMessage(yyyy, message);
 
 };
 
@@ -35,8 +72,8 @@ function checkDate(dd) {
 Submit.addEventListener("click", function (event) {
     event.preventDefault();
     checkDate(dd);
-    checkMonth();
-    checkYear();
+    checkMonth(mm);
+    checkYear(yyyy);
 
 
 
