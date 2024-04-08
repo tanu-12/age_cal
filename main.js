@@ -1,9 +1,17 @@
 var Dob = `1998-07-10`;
+var n;
+
+
 const Submit = document.querySelector(".arrow");
 const dd = document.querySelector(".Date");
 const mm = document.querySelector(".Month");
 const yyyy = document.querySelector(".Year");
 // const age_data = document.querySelector(".age_data");
+mm.addEventListener("input", function () {
+    n = new Date(yyyy.value, mm.value, 0).getDate();
+    console.log(n);
+
+});
 
 
 var d, m, y, birthDate, age;
@@ -24,11 +32,13 @@ function setErrorMessage(input, message, isValid) {
 
 }
 
+
 function checkDate(dd) {
     var isValid = false;
     var message;
 
-    var n = new Date(yyyy, mm, 0).getDate();
+
+
 
     if (dd.value == "") {
 
