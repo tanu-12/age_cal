@@ -7,17 +7,25 @@ const yyyy = document.querySelector(".Year");
 
 
 var d, m, y, birthDate, age;
-function setErrorMessage(input, message) {
+function setErrorMessage(input, message, isValid) {
     var age_data = input.parentNode;
     var error = age_data.querySelector(".error");
-    error.textContent = message;
+    if (!isValid) {
 
+        error.textContent = message;
+        age_data.className = "age_data error_class";
+    }
+    else {
 
-    age_data.className = "age_date error_class";
+        error.textContent = "";
+        age_data.className = "age_data";
+
+    }
 
 }
 
 function checkDate(dd) {
+    var isValid = false;
     var message;
 
     var n = new Date(yyyy, mm, 0).getDate();
@@ -29,12 +37,15 @@ function checkDate(dd) {
     } else if (dd.value > n || dd.value < 1) {
         message = "must be a valid date";
     }
+    else
+        isValid = true;
 
-    setErrorMessage(dd, message);
+    setErrorMessage(dd, message, isValid);
 
 };
 
 function checkMonth(mm) {
+    var isValid = false;
     var message;
 
 
@@ -46,12 +57,16 @@ function checkMonth(mm) {
     } else if (mm.value > 12 || mm.value < 1) {
         message = "must be a valid month";
     }
+    else
+        isValid = true;
 
-    setErrorMessage(mm, message);
+
+    setErrorMessage(mm, message, isValid);
 
 };
 
 function checkYear(yyyy) {
+    var isValid = false;
     var message;
     var cY = new Date().getFullYear();
 
@@ -61,11 +76,14 @@ function checkYear(yyyy) {
 
         message = "This field is required";
 
-    } else if (yyyy.value > cY || mm.value < 1) {
+    } else if (yyyy.value > cY || yyyy.value < 1) {
         message = "must be in the past ";
     }
+    else
+        isValid = true;
 
-    setErrorMessage(yyyy, message);
+
+    setErrorMessage(yyyy, message, isValid);
 
 };
 
