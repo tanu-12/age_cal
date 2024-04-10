@@ -22,42 +22,44 @@
 
 <body>
   <div class="card">
-    <form>
-      <div class="age_input flex-group">
-        <div class="age_data">
-          <label for="Date">Date</label>
-          <input type="number" class="Date" placeholder="DD" required min="1" max="31">
-          <div class="error"></div>
+    <main>
+      <form>
+        <div class="age_input flex-group">
+          <div class="age_data">
+            <label for="Date">Date</label>
+            <input type="number" class="Date" placeholder="DD" required min="1" max="31">
+            <div class="error"></div>
+          </div>
+          <div class="age_data">
+            <label for="Month">Month</label>
+            <input type="number" class="Month" placeholder="MM" required min="1" max="12">
+            <div class="error"></div>
+          </div>
+          <div class="age_data">
+            <label for="Year">Year</label>
+            <input type="number" class="Year" placeholder="YYYY">
+            <div class="error"></div>
+          </div>
         </div>
-        <div class="age_data">
-          <label for="Month">Month</label>
-          <input type="number" class="Month" placeholder="MM" required min="1" max="12">
-          <div class="error"></div>
+        <div class="arrow">
+          <div class="hline"></div>
+          <button class="arrow_button"><img src="assets/images/icon-arrow.svg" alt="icon-arrow">
+          </button>
         </div>
-        <div class="age_data">
-          <label for="Year">Year</label>
-          <input type="number" class="Year" placeholder="YYYY">
-          <div class="error"></div>
-        </div>
+      </form>
+      <div class="result">
+        <h1>
+          <div class="age_year"><span>--</span> years</div>
+        </h1>
+        <h1>
+          <div class="age_months"><span>--</span> months</div>
+        </h1>
+        <h1>
+          <div class="age_days"><span>--</span> days</div>
+        </h1>
       </div>
-      <div class="arrow">
-        <div class="hline"></div>
-        <button class="arrow_button"><img src="assets/images/icon-arrow.svg" alt="icon-arrow">
-        </button>
-      </div>
-    </form>
-    <div class="result">
-      <h1>
-        <div class="age_year"><span>--</span> years</div>
-      </h1>
-      <h1>
-        <div class="age_months"><span>--</span> months</div>
-      </h1>
-      <h1>
-        <div class="age_days"><span>--</span> days</div>
-      </h1>
-    </div>
   </div>
+  </main>
 
   <script defer src="main.js"></script>
 

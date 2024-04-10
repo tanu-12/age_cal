@@ -44,6 +44,7 @@ button,
 textarea,
 select {
   font: inherit;
+  outline: none;
 }
 
 /*
@@ -117,7 +118,7 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  /* font-size: 32px; */
+  font-size: 15px;
 
 }
 
@@ -125,6 +126,7 @@ label {
   font-style: normal;
   font-weight: var(--fri);
   color: var(--Smokey-grey);
+
 
 }
 
@@ -141,21 +143,56 @@ span {
 
 .card {
 
-
+  width: 50%;
   overflow: hidden;
   background-color: var(--White);
   padding: 8rem var(--padding);
+  min-width: 300px;
+  max-width: 1000px;
+  border-radius: 10%;
+  border-bottom-right-radius: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  max-width: 500px;
-  ;
+
+}
+
+.age_input {
+  gap: 10px;
+
+}
+
+main {
+  width: 80%;
+
+
+
 }
 
 .age_data {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* border: 1px solid black;*/
+  flex: 1;
+
 
 }
+
+input:focus {
+
+
+  border: 1px solid var(--Purple);
+  cursor: pointer;
+
+
+
+
+}
+
+
+
 
 .arrow {
   margin-top: 1rem;
@@ -167,9 +204,20 @@ span {
   font-style: var(--i);
 }
 
-.errorClass {
+/* 
   color: red;
+
+}.errorClass { */
+
+/* This is the style of our error messages */
+
+
+.arrow_button:hover {
+  background-color: var(--Off-black);
 
 }
 
-/* This is the style of our error messages */
+.error {
+  font-style: var(--i);
+  font-weight: var(--fri);
+}

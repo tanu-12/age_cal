@@ -51,6 +51,7 @@ function checkDate(dd) {
         isValid = true;
 
     setErrorMessage(dd, message, isValid);
+    return isValid;
 
 };
 
@@ -72,6 +73,7 @@ function checkMonth(mm) {
 
 
     setErrorMessage(mm, message, isValid);
+    return isValid;
 
 };
 
@@ -94,7 +96,7 @@ function checkYear(yyyy) {
 
 
     setErrorMessage(yyyy, message, isValid);
-
+    return isValid;
 };
 
 
@@ -103,14 +105,9 @@ function checkYear(yyyy) {
 
 Submit.addEventListener("click", function (event) {
     event.preventDefault();
-    checkDate(dd);
-    checkMonth(mm);
-    checkYear(yyyy);
-
-
-
-
-
+    var dv = checkDate(dd);
+    var mv = checkMonth(mm);
+    var yv = checkYear(yyyy);
 
 
 
@@ -124,7 +121,8 @@ Submit.addEventListener("click", function (event) {
     // console.log(birthDate);
     age = calculateAge(birthDate);
 
-    displayResult();
+    if (dv & mv & yv)
+        displayResult();
 
 
 

@@ -1,14 +1,38 @@
 .age_data.error_class {
     label {
         color: red;
+        font-style: italic;
+        font-weight: 400;
     }
 
-    input {
-        border: red;
+    // input {
+    //     // outline: none;
+    //     border-color: solid red;
+    // }
+    input:focus {
+
+
+        border: 1px solid var(--Purple);
+        cursor: pointer;
+
+
+
+
     }
 
     .error {
         color: red;
+        overflow: hidden;
+        text-align: center;
+
+    }
+}
+
+.age_data {
+    input:focus {
+        border: 1px solid var(--Purple);
+        cursor: pointer;
+
 
     }
 }
