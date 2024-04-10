@@ -106,7 +106,7 @@ h6 {
 .hline {
   width: 100%;
   margin: 1.5em auto;
-  border: 1px solid var(--Smokey-grey);
+  border: 1px solid var(--Light-grey);
 }
 
 
@@ -131,12 +131,12 @@ label {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 55px;
 }
 
 span {
   color: var(--Purple);
-  font-size: 32px;
+
 
 }
 
@@ -185,6 +185,13 @@ main {
 
 }
 
+input {
+  padding: .75rem;
+  border-radius: 3%;
+  border-color: 1px solid var(--Smokey-grey);
+}
+
+
 input:focus {
 
 
@@ -207,6 +214,7 @@ input:focus {
 .result {
   font-weight: var(--fbi);
   font-style: var(--i);
+  font: 40px;
 }
 
 /* 
